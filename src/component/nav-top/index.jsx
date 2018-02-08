@@ -1,13 +1,24 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import MMUtil from 'util/mm.jsx'
+import User from 'service/user-service.jsx'
+const _mm = new MMUtil()
+const _user = new User()
 
-
-class NavSide extends React.Component{
+class NavTop extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            username:_mm.getStorage('userInfo').username ||''
+        }
     }
     onlogout(){
-
+        _user.logout().then(res=>{
+            _mm.removeStorage('userInfo')
+            window.location.href='/login'
+        },errMsg=>{
+            _mm.errorTips(errMsg)
+        })
     }
     render(){
         return(
@@ -20,7 +31,7 @@ class NavSide extends React.Component{
                 <li className="dropdown">
                     <a className="dropdown-toggle" href="javascript:;">
                         <i className="fa fa-user fa-fw"></i>
-                        <span>欢迎admin xxx</span>
+                        <span>欢迎{this.state.username}</span>
                         <i className="fa fa-caret-down"></i>
                     </a>
                     <ul className="dropdown-menu dropdown-user">
@@ -34,4 +45,4 @@ class NavSide extends React.Component{
         )
     }
 }   
-export default NavSide
+export default NavTop

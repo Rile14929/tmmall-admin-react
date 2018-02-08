@@ -1,17 +1,10 @@
-/*
-* @Author: Rosen
-* @Date:   2017-12-17 19:47:48
-* @Last Modified by:   Rosen
-* @Last Modified time: 2018-01-23 17:35:24
-*/
-
 body {
     font-family: 'Open Sans', sans-serif;
     background: #f3f3f3;
 }
-.login-panel{
+/* .login-panel{
     margin-top: 25%;
-}
+} */
 
 .navbar-right .dropdown-toggle{
     color: #666;
