@@ -1,9 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import PageTitle from 'component/page-title/index.jsx'
-
 import Pagination from 'util/pagination/pagination.jsx'
-
+import TableList from 'util/table-list/index.jsx'
 import MMUtil from 'util/mm.jsx'
 import User from 'service/user-service.jsx'
 
@@ -25,6 +24,9 @@ class UserList extends React.Component{
         _user.getUserList(this.state.pageNum).then(res=>{
             this.setState(res)
         },errMsg=>{
+            this.setState({
+                list : []
+            });
             _mm.errorTips(errMsg)
         })
     }
@@ -39,51 +41,29 @@ class UserList extends React.Component{
     componentDidMount() {
         this.loadUserList()
     }
-   render(){
-       return(
-           <div id="page-wrapper">
-                <PageTitle title="用户列表" />
-                <div className="row">
-                    <div className="col-md-12">
-                        <table className="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>用户名</th>
-                                    <th>邮箱</th>
-                                    <th>电话</th>
-                                    <th>注册时间</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.state.list.length?this.state.list.map((user,index)=>{
-                                    return (
-                                        <tr key={index}>
-                                            <td>{user.id}</td>
-                                            <td>{user.username}</td>
-                                            <td>{user.email}</td>
-                                            <td>{user.phone}</td>
-                                            <td>{new Date(user.createTime).toLocaleString()}</td>
-                                        </tr>
-                                    )
-                                }):(
-                                    <tr>
-                                        <td colSpan="5" className="text-center">没有找到相应结果~</td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
-                    {
-                    this.state.pages > 1 ? <Pagination onChange={(pageNum) => {this.onPageNumChange(pageNum)}} 
-                        current={this.state.pageNum} 
-                        total={this.state.total} 
-                        showLessItems/>: null
-                    }
-                </div>
-           </div>
-           
-       )
+   render(){  
+        let listBody = this.state.list.map((user, index) => {
+            return (
+                <tr key={index}>
+                    <td>{user.id}</td>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                    <td>{user.phone}</td>
+                    <td>{new Date(user.createTime).toLocaleString()}</td>
+                </tr>
+            );
+        });
+        return (
+            <div id="page-wrapper">
+                <PageTitle title="用户列表"/>
+                <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
+                    {listBody}
+                </TableList>
+                <Pagination current={this.state.pageNum} 
+                    total={this.state.total} 
+                    onChange={(pageNum) => this.onPageNumChange(pageNum)}/>
+            </div>
+        );
    }
 }
 export default UserList
