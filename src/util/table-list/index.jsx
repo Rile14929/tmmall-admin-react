@@ -16,7 +16,6 @@ class TableList extends React.Component{
     render(){
         let tableHeader = this.props.tableHeads.map(
             (tableHead,index)=>{
-                console.log(tableHead)
                 if(typeof tableHead === 'object'){
                     return <th key={index} width={tableHead.width}>{tableHead.name}</th>
                 }else if(typeof tableHead === 'string'){
