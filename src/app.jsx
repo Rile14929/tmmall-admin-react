@@ -8,7 +8,7 @@ import Home from 'page/home/index.jsx'
 import Login from 'page/login/index.jsx'
 import UserList from 'page/user/index.jsx'
 import ErrorPage from 'page/error/index.jsx'
-import ProductRouter from 'page/product/index/router.jsx'
+import ProductRouter from 'page/product/router.jsx'
 
 
 class App extends React.Component{
