@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React     from 'react';
+import { Link }  from 'react-router-dom'
 import PageTitle from 'component/page-title/index.jsx'
 import TableList from 'util/table-list/index.jsx'
 
-import MMUtil from 'util/mm.jsx'
-import Product from 'service/product-service.jsx'
+import MMUtil    from 'util/mm.jsx'
+import Product   from 'service/product-service.jsx'
 
-const _mm = new MMUtil()
+const _mm      = new MMUtil()
 const _product = new Product()
 
 
@@ -46,7 +46,7 @@ class CategoryList extends React.Component {
             _mm.errorTips(errMsg)
         })
     }
-    
+
     // 更新品类名字
     onUpdateName(categoryId, categoryName) {
         let newName = window.prompt('请输入新的品类名称', categoryName)
