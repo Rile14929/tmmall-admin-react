@@ -1,7 +1,8 @@
 # 前端电商平台项目
 
 <h3>项目技术栈:</h3><br/>
-    1.React16+React-Router4+JQuery+Bootstrap<br/>
+    1.React16+React-Router4+JQuery+Boots
+ trap<br/>
     2.css预处理器Sass<br/>
     3.构建工具:webpack<br/>
     4.版本控制工具:git<br/>
