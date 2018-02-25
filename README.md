@@ -19,7 +19,7 @@
     4.进入命令行 yarn install 下载项目依赖<br/>
     5.进入命令行 输入yarn run dev 启动项目<br/>
     6.打开浏览器 访问http://localhost:8086<br/>
-    7.后台管理系统账户 用户名admin 密码 admin
+    7.后台管理系统账户 用户名admin 密码 admin
     
  
 <h3>个人博客 :</h3> 
