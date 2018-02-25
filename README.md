@@ -1,10 +1,11 @@
 # 前端电商平台项目
 
 <h3>项目技术栈:</h3><br/>
-    1.React16+React-Router4+JQuery<br/>
+    1.React16+React-Router4+JQuery+Bootstrap<br/>
     2.css预处理器Sass<br/>
     3.构建工具:webpack<br/>
     4.版本控制工具:git<br/>
+    5.包管理工具:yarn<br/>
     
 <br/><h3>本电商后台管理系统项目模块及具体功能:</h3><br/>
     1.商品管理->添加/编辑商品 查看商品 下架商品<br/>
