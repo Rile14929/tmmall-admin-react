@@ -15,11 +15,11 @@
 <br/><h3>项目预览方法:</h3><br/>
     1.使用git clone 将项目下载到本地<br/>
     2.进入项目文件夹tmmall-admin-react<br/>
-    3.如果没有yarn 请先下载 npm install yarn<br/>
+    3.如果没有yarn 请先下载 npm install yarn <br/>
     4.进入命令行 yarn install 下载项目依赖<br/>
     5.进入命令行 输入yarn run dev 启动项目<br/>
-    7.打开浏览器 访问http://localhost:8086
-    8.后台管理系统账户 用户名admin 密码 admin
+    6.打开浏览器 访问http://localhost:8086<br/>
+    7.后台管理系统账户 用户名admin 密码 admin
     
  
 <h3>个人博客 :</h3> 
